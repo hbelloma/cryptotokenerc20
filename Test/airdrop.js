@@ -1,12 +1,13 @@
 const { expectRevert } = require('@openzeppelin/test-helpers'); // for when a transaction fails
 //const Token = artifacts.require('ETBToken.sol'); //contract of the token
-const Token = artifacts.require('TokenERC20.sol');
+//const Token = artifacts.require('TokenERC20.sol');
+const Token = artifacts.require('DFeynmanCoin.sol');
 const Airdrop = artifacts.require('Airdrop.sol');
 
 contract('Airdrop', ([admin, _]) => {
   let token, airdrop;
-  const TOTAL_SUPPLY = web3.utils.toWei('1000000'); //MAXSUPP
-  const AIRDROP = web3.utils.toWei('100000');   //NUMBER OF AIRDROP
+  const TOTAL_SUPPLY = web3.utils.toWei('300000000'); //MAXSUPP
+  const AIRDROP = web3.utils.toWei('207542');   //NUMBER OF AIRDROP
 
   beforeEach(async () => {
     token = await Token.new();
@@ -47,7 +48,7 @@ contract('Airdrop', ([admin, _]) => {
 
   it('Should not airdrop above airdrop limit', async () => {
     const { signature, recipient, amount } = createSignature({
-      amount: web3.utils.toWei('100001') //value grater than airdrop
+      amount: web3.utils.toWei('207543') //value grater than airdrop (airdrop+1)
     });
     await expectRevert(
       airdrop.claimTokens(recipient, amount, signature),
