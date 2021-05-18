@@ -1,4 +1,7 @@
-const Token = artifacts.require('ETBToken.sol');
+
+
+//const Token = artifacts.require('ETBToken.sol');
+const Token = artifacts.require('TokenERC20.sol');
 
 contract('Token', accounts=> {
   let token;
