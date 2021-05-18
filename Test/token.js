@@ -7,8 +7,7 @@ const Token = artifacts.require('DFeynmanCoin.sol');
 contract('Token', accounts=> {
   let token;
   const [admin, _] = accounts;
-  const TOTAL_SUPPLY = web3.utils.toWei('207542'); //ammount for airdrop
-
+  const TOTAL_SUPPLY = web3.utils.toWei('300000000'); //Total ammount (max supply) 
   before(async () => {
     token = await Token.new();
   });
