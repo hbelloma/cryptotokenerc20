@@ -1,14 +1,14 @@
 pragma solidity ^0.8.3;
 
-import '@hbelloma/cryptotokenerc20/TokenERC20full.sol';
-//import '@openzeppelin/contracts/token/IERC20.sol';
+//import '@hbelloma/cryptotokenerc20/TokenERC20full.sol';
+import '@openzeppelin/contracts/token/IERC20.sol';
 
 contract Airdrop {
   address public admin; //address to verify signatures
   mapping(address => bool) public processedAirdrops; //to prevent airdrop more than once
   IERC20 public token;
   uint public currentAirdropAmount;
-  uint public maxAirdropAmount = 100000 * 10 ** 18; // 100000 is the total for airdrop 10% percentage
+  uint public maxAirdropAmount = 207542 * 10 ** 8; // 100000 is the total for airdrop 10% percentage
 
   event AirdropProcessed(
     address recipient,
