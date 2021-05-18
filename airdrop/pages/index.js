@@ -47,9 +47,9 @@ export default function Home() {
         payload: `
           Claiming token from Airdrop contract...
           Address: ${response.data.address}
-          Total Amount: ${Web3.utils.fromWei(response.data.totalAllocation.toString())} ETB
-          -> Basic allocation: ${Web3.utils.fromWei(response.data.basicAllocation.toString())} ETB
-          -> Bonus allocation: ${Web3.utils.fromWei(response.data.bonusAllocation.toString())} ETB
+          Total Amount: ${Web3.utils.fromWei(response.data.totalAllocation.toString())} FEYN
+          -> Basic allocation: ${Web3.utils.fromWei(response.data.basicAllocation.toString())} FEYN
+          -> Bonus allocation: ${Web3.utils.fromWei(response.data.bonusAllocation.toString())} FEYN
         `
       });
       const receipt = await airdrop
@@ -65,9 +65,9 @@ export default function Home() {
         payload: `Airdrop success!
 Tokens successfully in tx ${receipt.transactionHash} 
 Address: ${response.data.address}
-Total Amount: ${Web3.utils.fromWei(response.data.totalAllocation.toString())} ETB
--> Basic allocation: ${Web3.utils.fromWei(response.data.basicAllocation.toString())} ETB
--> Bonus allocation: ${Web3.utils.fromWei(response.data.bonusAllocation.toString())} ETB
+Total Amount: ${Web3.utils.fromWei(response.data.totalAllocation.toString())} FEYN
+-> Basic allocation: ${Web3.utils.fromWei(response.data.basicAllocation.toString())} FEYN
+-> Bonus allocation: ${Web3.utils.fromWei(response.data.bonusAllocation.toString())} FEYN
         `
       });
     } catch(e) {
@@ -90,14 +90,14 @@ Reason" Airdrop already sent to ${address}`
   return (
     <div className='container'>
       <Head>
-        <title>Eat The Blocks Airdrop</title>
+        <title>DFeynman Coin Airdrop</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className='row mt-4'>
         <div className='col-sm-12'>
           <div className="jumbotron">
-            <h1 className='text-center'>Eat The Blocks Airdrop</h1>
+            <h1 className='text-center'>DFeynman Coin Airdrop</h1>
           </div>
         </div>
       </div>
@@ -122,7 +122,7 @@ Reason" Airdrop already sent to ${address}`
                   <li>Step 1: Make sure you have configured the BSC network with Metamask</li>
                   <li>Step 2: Make sure you have some BNB to pay for transaction fees (~1-2 USD worth of BNB, paid to the network</li>
                   <li>Step 3: Enter your BSC address and click on submit. This will fetch an authorization signature from the list of whitelisted address</li>
-                  <li>Step 4: Confirm the transaction to claim your ETB tokens. This will send a transaction to the Airdrop smart contract</li>
+                  <li>Step 4: Confirm the transaction to claim your FEYN tokens. This will send a transaction to the Airdrop smart contract</li>
                 </ul>
               </div>
             </div>
