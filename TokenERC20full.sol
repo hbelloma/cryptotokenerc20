@@ -89,8 +89,8 @@ contract {{Token Symbol}}Token is ERC20Interface, SafeMath {
         name = "{{Token Name}}";
         decimals = {{Decimals}};
         _totalSupply = {{Total Supply}};
-        balances[{{Owner Account}}] = _totalSupply;
-        emit Transfer(address(0), {{Owner Account}}, _totalSupply);
+        balances[{{Owner Account}}] = _totalSupply; //Owner Account = msg.sender
+        emit Transfer(address(0), {{Owner Account}}, _totalSupply); //msg.sender
     }
 
 
